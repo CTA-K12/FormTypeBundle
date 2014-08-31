@@ -1,0 +1,3 @@
+mesd_form_type_homepage:
+    path:  /hello/{name}
+    defaults: { _controller: MesdFormTypeBundle:Default:index }

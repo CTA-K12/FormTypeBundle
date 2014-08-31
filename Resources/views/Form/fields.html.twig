@@ -1,0 +1,107 @@
+{# src/Mesd/FormTypeBundle/Resources/views/Form/fields.html.twig #}
+{% extends 'form_div_layout.html.twig' %}
+
+{% block gender_widget %}
+    {% spaceless %}
+        {% if expanded %}
+            <ul {{ block('widget_container_attributes') }}>
+            {% for child in form %}
+                <li>
+                    {{ form_widget(child) }}
+                    {{ form_label(child) }}
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            {# just let the choice widget render the select tag #}
+            {{ block('choice_widget') }}
+        {% endif %}
+    {% endspaceless %}
+{% endblock gender_widget %}
+
+{% block state_widget %}
+    {% spaceless %}
+        {% if expanded %}
+            <ul {{ block('widget_container_attributes') }}>
+            {% for child in form %}
+                <li>
+                    {{ form_widget(child) }}
+                    {{ form_label(child) }}
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            {# just let the choice widget render the select tag #}
+            {{ block('choice_widget') }}
+        {% endif %}
+    {% endspaceless %}
+{% endblock state_widget %}
+
+{% block field_row %}
+    {% spaceless %}
+        <div class="form_row">
+            <div class="span4">
+                {{ form_label(form) }}
+            </div>
+            {{ form_errors(form) }}
+            {{ form_widget(form) }}
+        </div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block form_label %}
+{% spaceless %}
+    {% if label is not sameas(false) %}
+        {% if not compound %}
+            {% set label_attr = label_attr|merge({'for': id}) %}
+        {% endif %}
+        {% if required %}
+            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+        {% endif %}
+        {% if label is empty %}
+            {% set label = name|humanize %}
+        {% endif %}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}
+        {% if required %}<span class="text-error" title="This field is required">*</span>{% endif %}
+    </label>
+    {% endif %}
+{% endspaceless %}
+{% endblock form_label %}
+
+{% block ckeditor_widget %}
+        <script type="text/javascript" src="{{ asset('bundles/mesdformtype/bower_components/ckeditor/ckeditor.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/mesdformtype/bower_components/ckeditor/config.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/mesdformtype/bower_components/ckeditor/styles.js') }}"></script>
+{% spaceless %}
+    {% set attr = attr|merge({'class': 'ckeditor'}) %}
+    <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+    <script type="text/javascript">
+        //var mesdConfig = {
+        //    format_h2: { element: 'h2', attributes: { 'id': 'foobar' } }
+        //};
+        //CKEDITOR.replace('{{ id }}', mesdConfig);
+        //console.log({{id}});
+        //var editor = CKEDITOR.
+        //var writer = {{ id }}.dataProcessor.writer;
+        //CKEDITOR.replace( {{ id }}, {
+        //    allowedContent: 'p b i h2 h3 h4; a[!href]',
+        //    toolbarGroups: [
+        //        { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+        //        { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+        //        { name: 'links' },
+        //        { name: 'insert' },
+        //        { name: 'forms' },
+        //        { name: 'tools' },
+        //        { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
+        //        { name: 'others' },
+        //        '/',
+        //        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+        //        { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align' ] },
+        //        { name: 'styles' },
+        //        { name: 'colors' },
+        //        { name: 'about' }
+        //    ]
+        //});
+    </script>
+{% endspaceless %}
+{% endblock ckeditor_widget %}

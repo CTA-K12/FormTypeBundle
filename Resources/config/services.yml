@@ -1,0 +1,14 @@
+parameters:
+    form.type.gender.class: Mesd\FormTypeBundle\Form\Type\GenderType
+    form.type.ckeditor.class: Mesd\FormTypeBundle\Form\Type\CKEditorType
+
+services:
+    form.type.gender:
+        class: %form.type.gender.class%
+        tags:
+            - { name: form.type, alias: gender }
+
+    form.type.ckeditor:
+        class: %form.type.ckeditor.class%
+        tags:
+            - { name: form.type, alias: ckeditor }
