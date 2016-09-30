@@ -1,0 +1,4 @@
+# messages.fr.yml
+# French
+Welcome:
+    user: Bienvenue %name%

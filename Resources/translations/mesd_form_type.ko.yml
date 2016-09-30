@@ -1,0 +1,4 @@
+# messages.ko.yml
+# Korean
+Welcome:
+    user: %name% 을 환영합니다

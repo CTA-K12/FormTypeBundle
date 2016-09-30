@@ -1,14 +1,44 @@
 parameters:
-    form.type.gender.class: Mesd\FormTypeBundle\Form\Type\GenderType
-    form.type.ckeditor.class: Mesd\FormTypeBundle\Form\Type\CKEditorType
+    form.type.gender.class:                             Mesd\FormTypeBundle\Form\Type\GenderType
+    form.type.state.class:                              Mesd\FormTypeBundle\Form\Type\StateType
+    form.type.prefix.class:                             Mesd\FormTypeBundle\Form\Type\PrefixType
+    form.type.suffix.class:                             Mesd\FormTypeBundle\Form\Type\SuffixType
+    form.type.ckeditor.class:                           Mesd\FormTypeBundle\Form\Type\CKEditorType
+    mesd_form_type.us_postal_code.class:                Mesd\FormTypeBundle\Form\Type\UsPostalCodeType
+    mesd_form_type.datetime_picker.class:               Mesd\FormTypeBundle\Form\Type\DateTimePickerType
+    mesd_form_type.form_extension.twig_extension.class: Mesd\FormTypeBundle\Twig\Extension\FormExtension
 
 services:
     form.type.gender:
         class: %form.type.gender.class%
         tags:
-            - { name: form.type, alias: gender }
-
+            - { name: form.type, alias: mesd_form_type_gender }
+    form.type.state:
+        class: %form.type.state.class%
+        tags:
+            - { name: form.type, alias: mesd_form_type_state }
+    form.type.prefix:
+        class: %form.type.prefix.class%
+        tags:
+            - { name: form.type, alias: mesd_form_type_prefix }
+    form.type.suffix:
+        class: %form.type.suffix.class%
+        tags:
+            - { name: form.type, alias: mesd_form_type_suffix }
     form.type.ckeditor:
         class: %form.type.ckeditor.class%
         tags:
-            - { name: form.type, alias: ckeditor }
+            - { name: form.type, alias: mesd_form_type_ckeditor }
+    mesd_form_type.us_postal_code:
+        class: %mesd_form_type.us_postal_code.class%
+        tags:
+            - { name: form.type, alias: mesd_form_type_us_postal_code }
+    mesd_form_type.datetime_picker:
+        class: %mesd_form_type.datetime_picker.class%
+        tags:
+            - { name: form.type, alias: mesd_form_type_datetime_picker }
+    mesd_form_type.form_extension.twig_extension:
+        class: %mesd_form_type.form_extension.twig_extension.class%
+        public: false
+        tags:
+                - { name: twig.extension }

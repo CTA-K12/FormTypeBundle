@@ -1,0 +1,4 @@
+# messages.sv.yml
+# Swedish
+Welcome:
+    user: Välkommen %name%

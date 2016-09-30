@@ -1,0 +1,4 @@
+# messages.cs.yml
+# Czech
+Welcome:
+    user: Vítejte %name%

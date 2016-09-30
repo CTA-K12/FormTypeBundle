@@ -3,20 +3,20 @@
 namespace Mesd\FormTypeBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class GenderType extends AbstractType
 {
-    public function getDefaultOptions(array $options)
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
+        $resolver->setDefaults( array(
             'choices' => array(
                 'M' => 'Male',
                 'F' => 'Female',
                 'T' => 'Transgender',
                 'N' => 'Gender Neutral',
             )
-        );
+        ));
     }
 
     public function getParent()
@@ -26,6 +26,6 @@ class GenderType extends AbstractType
 
     public function getName()
     {
-        return 'gender';
+        return 'mesd_form_type_gender';
     }
 }

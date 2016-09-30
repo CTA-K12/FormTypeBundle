@@ -1,0 +1,4 @@
+# messages.vi.yml
+# Vietnamese
+Welcome:
+    user: Chào mừng %name%

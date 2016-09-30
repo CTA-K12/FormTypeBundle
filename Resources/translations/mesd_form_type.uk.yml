@@ -1,0 +1,4 @@
+# messages.uk.yml
+# Ukranian
+Welcome:
+    user: Ласкаво просимо %name%

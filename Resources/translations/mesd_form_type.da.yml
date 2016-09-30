@@ -1,0 +1,4 @@
+# messages.da.yml
+# Danish
+Welcome:
+    user: Velkommen %name%

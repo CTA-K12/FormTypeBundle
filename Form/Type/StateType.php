@@ -3,13 +3,13 @@
 namespace Mesd\FormTypeBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class StateType extends AbstractType
 {
-    public function getDefaultOptions(array $options)
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
+        $resolver->setDefaults( array(
             'choices' => array(
                 'AL' => 'Alabama',  
                 'AK' => 'Alaska',  
@@ -19,7 +19,7 @@ class StateType extends AbstractType
                 'CO' => 'Colorado',  
                 'CT' => 'Connecticut',  
                 'DE' => 'Delaware',  
-                'DC' => 'District of Columbia',  
+                'DC' => 'District Of Columbia',  
                 'FL' => 'Florida',  
                 'GA' => 'Georgia',  
                 'HI' => 'Hawaii',  
@@ -62,6 +62,18 @@ class StateType extends AbstractType
                 'WV' => 'West Virginia',  
                 'WI' => 'Wisconsin',  
                 'WY' => 'Wyoming',
+                'AS' => 'American Samoa',
+                'FM' => 'Federated States of Micronesia',
+                'GU' => 'Guam',
+                'MH' => 'Marshall Islands',
+                'MP' => 'Northern Mariana Islands',
+                'PW' => 'Palau',
+                'PR' => 'Puerto Rico',
+                'VI' => 'Virgin Islands',
+                'AA' => 'Armed Forces Americas (except Canada)',
+                'AE' => 'Armed Forces Canada/Europe/Africa/Middle East',
+                'AP' => 'Armed Forces Pacific',
+            )
         ));
     }
 
@@ -72,6 +84,6 @@ class StateType extends AbstractType
 
     public function getName()
     {
-        return 'status';
+        return 'mesd_form_type_state';
     }
 }

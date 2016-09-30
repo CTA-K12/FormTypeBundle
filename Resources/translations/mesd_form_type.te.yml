@@ -1,0 +1,4 @@
+# messages.te.yml
+# Telugu
+Welcome:
+    user: %name% స్వాగతం

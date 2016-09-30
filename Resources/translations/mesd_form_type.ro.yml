@@ -1,0 +1,4 @@
+# messages.ro.yml
+# Romanian
+Welcome:
+    user: Bine ai venit %name%

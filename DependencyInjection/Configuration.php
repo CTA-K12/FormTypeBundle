@@ -8,13 +8,13 @@
  * Copyright (c) 2014 Multnomah Education Service District <http://www.mesd.k12.or.us>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- * 
+ *
  * @filesource /src/Mesd/FormTypeBundle/DependencyInjection/Configuration.php
  * @package    Mesd\FormTypeBundle
  * @copyright  2014 (c) Multnomah Education Service District <http://www.mesd.k12.or.us>
  * @license    <http://opensource.org/licenses/MIT> MIT
  * @author     Curtis G Hanson <chanson@mesd.k12.or.us>
- * @version    0.1.0
+ * @version    {@inheritdoc}
  */
 namespace Mesd\FormTypeBundle\DependencyInjection;
 
@@ -43,17 +43,25 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('mesd_form_type');
 
+        $rootNode
+            ->children()
+                ->booleanNode('datetime_picker_enabled')
+                    ->defaultFalse()
+                ->end()
+            ->end()
+        ;
+
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
-        
+
         /*
         $rootNode
             ->children()
                 ->
             ;
         */
-       
+
         /*
         Configuration Options
             toolbar:

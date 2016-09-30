@@ -1,0 +1,4 @@
+# messages.de.yml
+# German
+Welcome:
+    user: Willkommen %name%

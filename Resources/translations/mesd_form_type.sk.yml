@@ -1,0 +1,4 @@
+# messages.sk.yml
+# Slovak
+Welcome:
+    user: Vitajte %name%

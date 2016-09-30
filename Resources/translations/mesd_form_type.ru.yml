@@ -1,0 +1,4 @@
+# messages.ru.yml
+# Russian
+Welcome:
+    user: Добро пожаловать %name%

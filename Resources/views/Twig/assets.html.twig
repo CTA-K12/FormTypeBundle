@@ -1,0 +1,45 @@
+{%- block mesd_form_type_js -%}
+    <script type="text/javascript" src="{{ asset('bundles/mesdformtype/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+{%- endblock mesd_form_type_js -%}
+
+{%- block mesd_form_type_css -%}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mesdformtype/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" />
+{%- endblock mesd_form_type_css -%}
+
+{%- block mesd_form_type_page_js -%}
+    <script type="text/javascript">
+        $('.mesd_form_type_datetime_picker').each(function() {
+            obj = window[$(this).attr('id')];
+
+            var options = {
+                format: obj.config.format,
+                icons: {
+                    time:     obj.config.icons.time,
+                    date:     obj.config.icons.date,
+                    up:       obj.config.icons.up,
+                    down:     obj.config.icons.down,
+                    previous: obj.config.icons.previous,
+                    next:     obj.config.icons.next,
+                    today:    obj.config.icons.today,
+                    clear:    obj.config.icons.clear,
+                    close:    obj.config.icons.close
+                }
+            };
+
+            if (obj.config.linked_with != null) {
+                options.useCurrent = false;
+            }
+
+            $(this).datetimepicker(options);
+
+            if (obj.config.on_change != null) {
+                $(this)
+                    .data('userCallback', obj.config.on_change)
+                    .on('dp.change', function(e) {
+                        window[$(this).data('userCallback')].apply(e);
+                    })
+                ;
+            }
+        });
+    </script>
+{%- endblock mesd_form_type_page_js -%}

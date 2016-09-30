@@ -8,18 +8,19 @@
  * Copyright (c) 2014 Multnomah Education Service District <http://www.mesd.k12.or.us>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- * 
+ *
  * @filesource /src/Mesd/FormTypeBundle/Form/Type/CKEditorType.php
  * @package    Mesd\FormTypeBundle\Form\Type
  * @copyright  2014 (c) Multnomah Education Service District <http://www.mesd.k12.or.us>
  * @license    <http://opensource.org/licenses/MIT> MIT
  * @author     Curtis G Hanson <chanson@mesd.k12.or.us>
- * @version    0.1.0
+ * @version    {@inheritdoc}
  */
 namespace Mesd\FormTypeBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * CKEditor Form Type Class
@@ -35,14 +36,14 @@ use Symfony\Component\Form\FormBuilder;
 class CKEditorType extends AbstractType
 {
     /**
-     * Get Default Options
+     * Set Default Options
      *
-     * Get the default 
+     * Set the default options
      *
      * @since  0.1.0
-     * @param  string[]   $options A multidimensional array of k => v options
+     * @param  OptionsResolverInterface $resolver
      */
-    public function getDefaultOptions(array $options)
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         // this does nothing
         // i added the class to the field type
@@ -61,7 +62,7 @@ class CKEditorType extends AbstractType
      */
     public function getParent()
     {
-        return 'textarea';
+        return TextareaType::class;
     }
 
     /**
@@ -74,7 +75,7 @@ class CKEditorType extends AbstractType
      */
     public function getName()
     {
-        return 'ckeditor';
+        return 'mesd_form_type_ckeditor';
     }
 
 }

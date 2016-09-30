@@ -1,0 +1,4 @@
+# messages.tl.yml
+# Tagalog
+Welcome:
+    user: Maligayang %name%

@@ -1,0 +1,4 @@
+# messages.lt.yml
+# Lithuanian
+Welcome:
+    user: Sveiki %name%

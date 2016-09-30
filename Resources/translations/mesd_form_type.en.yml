@@ -1,0 +1,323 @@
+# messages.en.yml
+# English
+about:                 About
+about.me:              About Me
+activate:              Activate
+administrative:
+    data:              Administrative Data
+access.flag:           Access Flag
+account:
+    data:              Account Data
+actions:               Actions
+active:                Active
+active.cases:          Active Cases
+add:
+    adult:             Add Adult
+    caseworker:        Add Caseworker
+    contact.method:    Add Contact Method
+    child:             Add Child
+    specialist:        Add Specialist
+address:               Address
+admin:                 Admin
+admin.notes:           Administrative Notes
+admin.panel:           Admin Panel
+administrative.notes:  Administrative Notes
+administrative.notes.section: The following field is only viewable to users with ROLE_ADMIN and above
+administrative.personnel.enter.notes.about.user.here: Administrative personnel may enter notes about this user here
+adults:                Adults
+age:                   Age
+agencies:              Agencies
+agency:                Agency
+agency.type:           Agency Type
+all.cases:             All Cases
+allegation.details:    Allegation Details
+allegations:           Allegations
+already.logged.in:     Already logged in
+assigned.cases:        Assigned Cases
+back:                  Back
+billing:               Billing
+cancel:                Cancel
+case:
+    allegations.safety.threats: Case Allegations & Safety Threats
+    contacts:          Case Contacts
+    details:           Case Details
+    information:       Case Information
+    management:        Case Management
+    name:              Case Name
+    no:                Case No.
+    note:              Case Note
+    notes:             Case Notes
+    number:            Case Number
+    participants:      Case Participants
+    staff:             Case Staff
+    status:            Case Status
+cases:                 Cases
+caseworker:            Caseworker
+caseworkers:           Caseworkers
+check.all.apply:       Check all that apply
+check.child.ethnic.background: Check child's ethnic background
+check.child.spoken.languages:  Check child's spoken languages
+check.child.type.service: Check type of service for child
+children:              Children
+claimed:               Claimed
+close:
+    case:              Close Case
+    description:       Close Description
+    reason:            Close Reason
+closing.summary:       Closing Summary
+contact:               Contact
+contact.details:       Contact Details
+contacts:              Contacts
+contact.customer.support.reactivated: Contact customer support to be re-activated
+continue:              Continue
+contract:              Contract
+contractor:            Contractor
+contractor.status:     Contractor Status
+create.new.user:       Create New User
+create.referral:       Create Referral
+credentials.ok:        Credentials OK
+current.status:        Current Status
+dashboard:             Dashboard
+date.created:          Date Created
+date.time:             Date/Time
+days.open:             Days Open
+delete:                Delete
+description:           Description
+details:               Details
+dhs.branch:            DHS Branch
+displaying.max.of.total.records:    Displaying %max% of %total% records
+displaying.x.to.y.of.total.records: Displaying %x% to %y% of %total% records
+divisions:             Divisions
+d.o.b.:                DOB
+edit:                  Edit
+edit.allegations:      Edit Allegations
+edit.case.details:     Edit Case Details
+edit.contact.details:  Edit Contact Details
+edit.contact.method:   Edit Contact Method
+edit.first.contact.address:   Edit First Contact Address
+edit.first.contact.date.time: Edit First Contact Date & Time
+edit.safety.threats:   Edit Safety Threats
+email:                 Email
+end:                   End
+end.date:              End Date
+enabled:               Enabled
+enter:
+    detailed.reason.closure:    Enter a detailed reason for closure
+    detailed.reason.rejection:  Enter a detailed reason for rejection
+    detailed.reason.rereferral: Enter a detailed reason for rereferral
+    program.case.number:        Enter the %program% Case Number
+    state.pariticipant.id:      Enter State Participant ID
+ethnicity:             Ethnicity
+extended:              Extended
+extension:
+    approved:             Extension Approved
+    requested:            Extension Requested
+family.role:              Family Role
+fc.summary:               First Contact Summary
+fgc.summary:              Family Group Conference Summary
+filter:                   Filter
+first.contact:            First Contact
+first.contact.address:    First Contact Address
+first.contact.date.time:  First Contact Date & Time
+first.name:               First Name
+gender:                   Gender
+groups:                   Groups
+help:                     Help
+help.wiki:                HelpWiki
+history:                  History
+home:                     Home
+hours:                    Hours
+id:                       ID
+in.home:                  In-home
+inactivate:               Inactivate
+inactive:                 Inactive
+index:                    Index
+indicate.role.in.family:  Indicate role in family
+individuals:              Individuals
+job.title:                Job Title
+language:                 Language
+last.login:               Last Login
+last.name:                Last Name
+legacy:                   Legacy
+legacy.data:              Legacy Data
+legacy.id:                Legacy ID
+links:                    Links
+list:                     List
+locked:                   Locked
+logged.in.as.username:    Logged in as %username%
+login:                    Login
+make.adult.primary:       Make Adult Primary
+make.lead.caseworker:     Make Lead Caseworker
+make.lead.specialist:     Make Lead Specialist
+make.caseworker.active:   Make Caseworker Active
+make.caseworker.inactive: Make Caseworker Inactive
+make.specialist.active:   Make Specialist Active
+make.specialist.inactive: Make Specialist Inactive
+manage.links:             Manage Links
+manage.tags:              Manage Tags
+messages:                 Messages
+middle.name:              Middle Name
+migration:                Migration
+moderate.comments:        Moderate Comments
+monthly.summary:          Monthly Summary
+my.cases:                 My Cases
+name:                     Name
+narrative:                Narrative
+new:                      New
+new.agency:               New Agency
+new.division:             New Division
+new.group:                New Group
+new.help.wiki.page:       New HelpWiki Page
+new.role:                 New Role
+new.user:                 New User
+nickname:                 Nickname
+no:
+    adults.add.to.referral:   No adults have been added to this referral.
+    children.add.to.referral: No children have been added to this referral.
+    data.entered:         No data entered.
+    groups.defined:       No groups defined.
+    phone.listed:         No phone listed.
+    results.or.empty.search: No results or empty search.
+    subordinates.defined: No subordinates defined.
+    supervisors.defined:  No supervisors defined.
+not:
+    expired:              Not Expired
+    locked:               Not Locked
+note.id:                  Note ID
+numbers.only:             Numbers only
+object:                   Object
+off.referral:             Off Referral
+order.pages:              Order Pages
+organizations:            Organizations
+orkids.id:                ORKids ID
+orkids.name.number:       ORKids Name & Number
+owner:                 Owner
+owner.agency:          Owner & Agency
+page.permissions:      Page Permissions
+page.permissions.are.not.yet.implemented: Page permissions are not yet implemented.
+page:                  Page
+pages:                 Pages
+panel:                 Panel
+participant.id:        Participant ID
+participants:          Participants
+password:              Password
+password.repeated:     Password Repeated
+permission:            Permission
+permissions:           Permissions
+persons:               Persons
+phone:                 Phone
+phone.email:           Phone & Email
+phone.ext:             Phone Ext.
+position:              Position
+primary:               Primary
+primary.adult:         Primary Adult
+privacy:               Privacy
+program.case.number:   %program% Case Number
+providers:             Providers
+prefix:                Prefix
+previous:              Previous
+profile:               Profile
+progress.note:         Progress Note
+provider:              Provider
+records.per.page:      Records Per Page
+referral:              Referral
+referred.cases:        Referred Cases
+reject:
+    case:              Reject Case
+    description:       Reject Description
+    reason:            Reject Reason
+remaining:             Remaining
+remove:
+    adult:             Remove Adult
+    child:             Remove Child
+reports:               Reports
+rerefer:
+    case:              Rerefer Case
+    description:       Rerefer Description
+    reason:            Rerefer Reason
+results:               Results
+reunification:         Reunification
+revision.revnum.chapter.chapternum.page.pagenum: 'Revision: %revnum%, Chapter: %chapternum%, Page: %pagenum%.'
+role:                  Role
+roles:                 Roles
+safety.threat.details: Safety Threat Details
+safety.threats:        Safety Threats
+search:                Search
+search.cases:          Search Cases
+security:              Security
+select:
+    contract:          Select a Contract
+    contract.case.applies: Select the contract to which this case applies
+    eligible.caseworker:   Select eligible caseworker
+    reason.closure:        Select the reason for closure
+    reason.rejection:      Select the reason for rejection
+    reason.rereferral:     Select the reason for rereferral
+    relationship.to.primary.adult: Select relationship to primary adult
+service.type:          Service Type
+settings:              Settings
+show:
+    users:             Show User
+specialist:            Specialist
+specialists:           Specialists
+staff:                 Staff
+staff.agency.type:     Staff Agency Type
+staff.association:     Staff Association
+staff.data:            Staff Data
+staff.id:              Staff ID
+staff.type.id:         Staff Type ID
+staff.type.name:       Staff Type Name
+start:                 Start
+start.date:            Start Date
+start.over:            Start Over
+starting:              Starting
+status:                Status
+status.name:           Status Name
+submit.request:        Submit Request
+suffix:                Suffix
+subordinates:          Subordinates
+supervisor:            Supervisor
+supervisors:           Supervisors
+support.funds:         Support Funds
+switch.status:         Switch Status
+table.of.contents:     Table of Contents
+tag:                   Tag
+tags:                  Tags
+terms:                 Terms
+t.o.c:                 TOC
+toggle:
+    navigation:        Toggle navigation
+type:                  Type
+type.id:               Type ID
+type.name:             Type Name
+type.service:          Type Service
+updated.by.user.on.datetime: Update by %user% on %datetime%.
+unreferred.cases:      Unreferred Case
+user:                  User
+user.and.security:     Users & Security
+user.credentials:      User Credentials
+user.groups:           User Groups
+user.roles:            User Roles
+username:              Username
+username.must.be.unique: Username must be unique
+username.not.found:    %username% not found
+username.or.email:     Username or Email
+users:                 Users
+value:                 Value
+view:                  View
+view.case:             View Case
+view.restore.history:  View & Restore History
+write.relevant.information.about.yourself.here: Write relevant information about yourself here
+400.bad.request:           400 Bad Request
+401.unauthorized:          401 Unauthorized
+403.forbidden:             403 Unauthorized
+404.not.found:             404 Not Found
+405.method.not.allowed:    405 Method Not Allowed
+408.request.timed.out:     408 Request Timed Out
+409.conflict:              409 Conflict
+410.gone:                  410 Gone
+414.request.uri.too.long:  414 Request URI Too Long
+429.too.many.requests:     429 Too Many Requests
+500.internal.server.error: 500 Internal Server Error
+502.bad.gateway:           502 Bad Gateway
+503.server.unavailable:    503 Server Unavailable
+504.gateway.timeout:       504 Gateway Timeout

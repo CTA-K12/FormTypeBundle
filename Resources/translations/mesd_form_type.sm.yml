@@ -1,0 +1,4 @@
+# messages.sm.yml
+# Samoan
+Welcome:
+    user: Welcome %name%

@@ -1,0 +1,4 @@
+# messages.es.yml
+# Spanish
+Welcome:
+    user: Bienvenido %name%

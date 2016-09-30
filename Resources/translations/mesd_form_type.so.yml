@@ -1,0 +1,4 @@
+# messages.so.yml
+# Somalian
+Welcome:
+    user: Welcome %name%

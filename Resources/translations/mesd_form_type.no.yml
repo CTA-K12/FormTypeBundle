@@ -1,0 +1,4 @@
+# messages.no.yml
+# Norwegian
+Welcome:
+    user: Velkommen %name%

@@ -1,0 +1,4 @@
+# messages.tr.yml
+# Turkish
+Welcome:
+    user: %name% hoş geldiniz

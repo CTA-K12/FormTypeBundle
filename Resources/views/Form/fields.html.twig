@@ -1,7 +1,8 @@
 {# src/Mesd/FormTypeBundle/Resources/views/Form/fields.html.twig #}
 {% extends 'form_div_layout.html.twig' %}
+{% trans_default_domain 'mesd_form_type' %}
 
-{% block gender_widget %}
+{% block mesd_form_type_gender_widget %}
     {% spaceless %}
         {% if expanded %}
             <ul {{ block('widget_container_attributes') }}>
@@ -17,9 +18,9 @@
             {{ block('choice_widget') }}
         {% endif %}
     {% endspaceless %}
-{% endblock gender_widget %}
+{% endblock mesd_form_type_gender_widget %}
 
-{% block state_widget %}
+{% block mesd_form_type_state_widget %}
     {% spaceless %}
         {% if expanded %}
             <ul {{ block('widget_container_attributes') }}>
@@ -35,7 +36,7 @@
             {{ block('choice_widget') }}
         {% endif %}
     {% endspaceless %}
-{% endblock state_widget %}
+{% endblock mesd_form_type_state_widget %}
 
 {% block field_row %}
     {% spaceless %}
@@ -47,7 +48,7 @@
             {{ form_widget(form) }}
         </div>
     {% endspaceless %}
-{% endblock %}
+{% endblock field_row %}
 
 {% block form_label %}
 {% spaceless %}
@@ -62,13 +63,13 @@
             {% set label = name|humanize %}
         {% endif %}
         <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}
-        {% if required %}<span class="text-error" title="This field is required">*</span>{% endif %}
-    </label>
+        {% if required %}<span class="text-danger" title="This field is required">*</span>{% endif %}
+        {% if expanded is defined and expanded %}{% else %}</label>{% endif %}
     {% endif %}
 {% endspaceless %}
 {% endblock form_label %}
 
-{% block ckeditor_widget %}
+{% block mesd_form_type_ckeditor_widget %}
         <script type="text/javascript" src="{{ asset('bundles/mesdformtype/bower_components/ckeditor/ckeditor.js') }}"></script>
         <script type="text/javascript" src="{{ asset('bundles/mesdformtype/bower_components/ckeditor/config.js') }}"></script>
         <script type="text/javascript" src="{{ asset('bundles/mesdformtype/bower_components/ckeditor/styles.js') }}"></script>
@@ -104,4 +105,198 @@
         //});
     </script>
 {% endspaceless %}
-{% endblock ckeditor_widget %}
+{% endblock mesd_form_type_ckeditor_widget %}
+
+{% block button_widget %}
+{% spaceless %}
+    {% if label is empty %}
+        {%- if label_format is defined and label_format is not empty -%}
+            {% set label = label_format|replace({
+                '%name%': name,
+                '%id%': id,
+            }) %}
+        {%- else -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+    {% endif %}
+    {% if icon is not defined -%}
+        {% set icon = null %}
+    {%- endif -%}
+    <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{% if icon is not null %}<span class="fa fa-{{ icon }}"></span>{% endif %}&nbsp; {{ label|trans({}, translation_domain) }}</button>
+{% endspaceless %}
+{% endblock button_widget %}
+
+{% block mesd_form_type_prefix_widget %}
+    {% spaceless %}
+        {% if expanded %}
+            <ul {{ block('widget_container_attributes') }}>
+            {% for child in form %}
+                <li>
+                    {{ form_widget(child) }}
+                    {{ form_label(child) }}
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            {# just let the choice widget render the select tag #}
+            {{ block('choice_widget') }}
+        {% endif %}
+    {% endspaceless %}
+{% endblock mesd_form_type_prefix_widget %}
+
+{% block mesd_form_type_suffix_widget %}
+    {% spaceless %}
+        {% if expanded %}
+            <ul {{ block('widget_container_attributes') }}>
+            {% for child in form %}
+                <li>
+                    {{ form_widget(child) }}
+                    {{ form_label(child) }}
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            {# just let the choice widget render the select tag #}
+            {{ block('choice_widget') }}
+        {% endif %}
+    {% endspaceless %}
+{% endblock mesd_form_type_suffix_widget %}
+
+{%- block checkbox_widget -%}
+    {% if wrap_label is defined %}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{% if reverse_order is not defined %}{{ label|trans({}, translation_domain) }}{% endif %}
+    {% endif %}
+    <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+    {% if wrap_label is defined %}
+        {% if reverse_order is defined %}{{ label|trans({}, translation_domain) }}{% endif %}</label>
+    {% endif %}
+{%- endblock checkbox_widget -%}
+
+{%- block radio_widget -%}
+    {% if wrap_label is defined %}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{% if reverse_order is not defined %}{{ label|trans({}, translation_domain) }}{% endif %}
+    {% endif %}
+        <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+    {% if wrap_label is defined %}
+        {% if reverse_order is defined %}{{ label|trans({}, translation_domain) }}{% endif %}</label>
+    {% endif %}
+{%- endblock radio_widget -%}
+
+{%- block mesd_form_type_us_postal_code_widget -%}
+    {%- set type = type|default('text') -%}
+    {{- block('form_widget_simple') -}}
+{%- endblock -%}
+
+{%- block mesd_form_type_datetime_picker_widget -%}
+    {#% set attr = attr|merge({'class': 'mesd_form_type_datetime_picker'}) %#}
+    {% set attr = attr|merge({'class': [attr.class, 'mesd_form_type_datetime_picker']|join(' ')}) %}
+    {{- block('form_widget_simple') -}}
+    <script type="text/javascript">
+        var {{ id }} = {
+            config: {
+                id:     '{{ id }}',
+                name:   '{{ name }}',
+                format: '{{ format }}',
+                icons: {
+                    time:     '{{ icons.time }}',
+                    date:     '{{ icons.date }}',
+                    up:       '{{ icons.up }}',
+                    down:     '{{ icons.down }}',
+                    previous: '{{ icons.previous }}',
+                    next:     '{{ icons.next }}',
+                    today:    '{{ icons.today }}',
+                    clear:    '{{ icons.clear }}',
+                    close:    '{{ icons.close }}'
+                }
+            }
+        };
+
+        {% if linked_with|default -%}{{ id }}.config.linked_with = '{{ linked_with }}';{%- endif %}
+        {% if on_change|default -%}{{ id }}.config.on_change = '{{ on_change }}';{%- endif %}
+    {#}
+        var {{ 'mesd_datetime_picker.' ~ id ~ '.vars' }} = {
+            dayViewHeaderFormat:   {{ day_view_header_format }},
+            extraFormats:          {{ extra_formats }},
+            stepping:              {{ stepping }},
+            minDate:               {{ min_date }},
+            maxDate:               {{ max_date }},
+            collapse:              {{ collapse }},
+            locale:                {{ locale }},
+            defaultDate:           {{ default_date }},
+            disabledDates:         {{ disabled_dates }},
+            enabledDates:          {{ enabled_dates }},
+            useStrict:             {{ use_strict }},
+            sideBySide:            {{ side_by_side }},
+            daysOfWeekDisabled:    {{ dow_disabled }},
+            calendarWeeks:         {{ calendar_weeks }},
+            viewMode:              {{ view_mode }},
+            toolbarPlacement:      {{ toolbar_placement }},
+            showTodayButton:       {{ show_today_button }},
+            showClear:             {{ show_clear }},
+            showClose:             {{ show_close }},
+            widgetPositioning:     {{ widget_positioning }},
+            widgetParent:          {{ widget_parent }},
+            keepOpen:              {{ keep_open }},
+            inline:                {{ inline }},
+            keepInvalid:           {{ keep_invalid }},
+            keyBinds:              {{ key_binds }},
+            debug:                 {{ debug }},
+            ignoreReadonly:        {{ ignore_read_only }},
+            disabledTimeIntervals: {{ disabled_time_intervals }},
+            allowInputToggle:      {{ allow_input_toggle }},
+            focusOnShow:           {{ focus_on_show }},
+            enabledHours:          {{ enabled_hours }},
+            disabledHours:         {{ diabled_hours }},
+            viewDate:              {{ view_date }},
+            tooltips:              {{ tool_tips }},
+            linked:                {{ linked_with }}
+        }
+    {#}
+    </script>
+{%- endblock mesd_form_type_datetime_picker_widget -%}
+
+{%- block jquery_collection_widget -%}
+    {% spaceless %}
+        {% if prototype is defined %}
+            {% set attr = attr|merge({'data-prototype': form_row(prototype)}) %}
+            {% set attr = attr|merge({'data-prototype-name': prototype.vars.name}) %}
+        {% endif %}
+        {% set attr = attr|merge({'data-allow-add': allow_add ? 1 : 0}) %}
+        {% set attr = attr|merge({'data-allow-delete': allow_delete ? 1 : 0 }) %}
+        {% set attr = attr|merge({'data-name-prefix': full_name}) %}
+        {{ block('form_widget') }}
+    {% endspaceless %}
+{%- endblock jquery_collection_widget -%}
+{#}
+
+{%- block date_widget -%}
+    {%- if widget == 'single_text' -%}
+        {{ block('form_widget_simple') }}
+    {%- else -%}
+        <div {{ block('widget_container_attributes') }}>
+            {{- date_pattern|replace({
+                '{{ year }}':  form_widget(form.year),
+                '{{ month }}': form_widget(form.month),
+                '{{ day }}':   form_widget(form.day),
+            })|raw -}}
+        </div>
+    {%- endif -%}
+{%- endblock date_widget -%}
+
+{%- block time_widget -%}
+    {%- if widget == 'single_text' -%}
+        {{ block('form_widget_simple') }}
+    {%- else -%}
+        {%- set vars = widget == 'text' ? { 'attr': { 'size': 1 }} : {} -%}
+        <div {{ block('widget_container_attributes') }}>
+            {{ form_widget(form.hour, vars) }}{% if with_minutes %}:{{ form_widget(form.minute, vars) }}{% endif %}{% if with_seconds %}:{{ form_widget(form.second, vars) }}{% endif %}
+        </div>
+    {%- endif -%}
+{%- endblock time_widget -%}
+
+{%- block form_widget_simple -%}
+    {%- set type = type|default('text') -%}
+    <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{%- endblock form_widget_simple -%}
+{#}
+

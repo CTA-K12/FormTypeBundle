@@ -1,0 +1,4 @@
+# messages.ja.yml
+# Japanese
+Welcome:
+    user: %name% を歓迎します

@@ -1,0 +1,4 @@
+# messages.zh.yml
+# Chinese
+Welcome:
+    user: 欢迎 %name%

@@ -1,0 +1,4 @@
+# messages.ms.yml
+# Malay
+Welcome:
+    user: Selamat datang %name%

@@ -14,7 +14,7 @@
  * @copyright  2014 (c) Multnomah Education Service District <http://www.mesd.k12.or.us>
  * @license    <http://opensource.org/licenses/MIT> MIT
  * @author     Curtis G Hanson <chanson@mesd.k12.or.us>
- * @version    0.1.0
+ * @version    {@inheritdoc}
  */
 namespace Mesd\FormTypeBundle\DependencyInjection;
 
@@ -31,7 +31,12 @@ use Symfony\Component\DependencyInjection\Loader;
 class MesdFormTypeExtension extends Extension
 {
     /**
-     * {@inheritDoc}
+     * Load extension
+     *
+     * @param array(string)    $configs   An array of strings
+     * @param ContainerBuilder $container The container class
+     *
+     * @return void
      */
     public function load(array $configs, ContainerBuilder $container)
     {
